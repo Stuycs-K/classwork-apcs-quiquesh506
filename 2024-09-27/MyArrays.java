@@ -16,6 +16,9 @@ public class MyArrays {
     }
     return ret;
   }
+  public static int[] concatArray(int[] ary1, int[] ary2) {
+    int[] ret = new int[sry1.length + ary2.length];
+  }
   public static void main(String[] args) {
     int[] test = new int[]{1,2,3,45,6};
     System.out.println(arrayToString(returnCopy(test)));
