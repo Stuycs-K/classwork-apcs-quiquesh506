@@ -33,18 +33,22 @@ public class MyArrays {
     int[] test = new int[]{1,2,3,45,6};
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
+    System.out.println("expect true:" + arrayToString(returnCopy(test)).equals(arrayToString(test)));
 
     test = new int[]{};
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
+    System.out.println("expect true:" + arrayToString(returnCopy(test)).equals(arrayToString(test)));
 
     test = new int[]{123,13242,53533,53,66,7};
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
+    System.out.println("expect true:" + arrayToString(returnCopy(test)).equals(arrayToString(test)));
 
     test = new int[]{2345678,4567,965467};
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
+    System.out.println("expect true:" + arrayToString(returnCopy(test)).equals(arrayToString(test)));
 
     System.out.println("Test for concatArray:");
 
