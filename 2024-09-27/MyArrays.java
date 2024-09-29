@@ -23,11 +23,13 @@ public class MyArrays {
       ret[i] = ary1[i];
     }
     for (int i = ary1.length; i < ary1.length + ary2.length; i++) {
-      ret[i] = ary2[i];
+      ret[i] = ary2[i - ary1.length];
     }
     return ret;
   }
+
   public static void main(String[] args) {
+    System.out.println("Test for return copy:");
     int[] test = new int[]{1,2,3,45,6};
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
@@ -36,5 +38,32 @@ public class MyArrays {
     System.out.println(arrayToString(returnCopy(test)));
     System.out.println(arrayToString(test));
 
+    test = new int[]{123,13242,53533,53,66,7};
+    System.out.println(arrayToString(returnCopy(test)));
+    System.out.println(arrayToString(test));
+
+    test = new int[]{2345678,4567,965467};
+    System.out.println(arrayToString(returnCopy(test)));
+    System.out.println(arrayToString(test));
+
+    System.out.println("Test for concatArray:");
+
+    int[] test1 = new int[]{8,9,5,66,7};
+    int[] test2 = new int[]{234,25435643,66};
+
+    System.out.println(arrayToString(test1) + arrayToString(test2));
+    System.out.println(arrayToString(concatArray(test1, test2)));
+
+    test1 = new int[]{};
+    test2 = new int[]{234,25435643,66};
+
+    System.out.println(arrayToString(test1) + arrayToString(test2));
+    System.out.println(arrayToString(concatArray(test1, test2)));
+
+    test1 = new int[]{};
+    test2 = new int[]{};
+
+    System.out.println(arrayToString(test1) + arrayToString(test2));
+    System.out.println(arrayToString(concatArray(test1, test2)));
   }
 }
