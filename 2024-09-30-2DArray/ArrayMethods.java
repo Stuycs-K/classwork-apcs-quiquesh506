@@ -25,14 +25,22 @@ public class ArrayMethods {
   * You are encouraged to notice that you may want to re-use
   * previous code, but you should NOT duplicate that code. (Don't copy/paste or retype it)
   */
-  public static String arrToString(int[][]ary){
+  public static String arrToString(int[][]nums){
   //this should use arrToString(int[])
-
+  String ret = new String("[");
+  for (int i = 0; i < nums.length; i++) {
+    ret += arrToString(nums[i]);
+    if (i < nums.length - 1) {
+      ret += ", ";
+    }
   }
+  return ret + "]";
+}
 
 /*Return the sum of all of the values in the 2D array */
   public static int arr2DSum(int[][]nums){
   //use a nested loop to solve this
+    return -1;
   }
 
 /**Rotate an array by returning a new array with the rows and columns swapped.
@@ -44,10 +52,17 @@ public class ArrayMethods {
   }
 
   public static void main(String[] args){
-    Int[][] test = new Int[][] {};
-    test = new Int[][] {{2, 2}, {5 , 7}, {1, 4}};
-    test = new Int[][] {{2, 4, 5, 6,2}};
-    test = new Int[][] {{2, 4}, {}, {5, 9}};
+    int[][] test = new int[][] {};
+    System.out.println(arrToString(test));
+    test = new int[][] {{2, 2}, {5 , 7}, {1, 4}};
+    System.out.println(arrToString(test));
+
+    test = new int[][] {{2, 4, 5, 6,2}};
+    System.out.println(arrToString(test));
+
+    test = new int[][] {{2, 4}, {}, {5, 9}};
+    System.out.println(arrToString(test));
+
 
 
   }
