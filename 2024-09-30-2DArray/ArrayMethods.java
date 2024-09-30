@@ -27,7 +27,7 @@ public class ArrayMethods {
   */
   public static String arrToString(int[][]ary){
   //this should use arrToString(int[])
-    return "";
+
   }
 
 /*Return the sum of all of the values in the 2D array */
@@ -42,4 +42,14 @@ public class ArrayMethods {
   public static int[][] swapRC(int[][]nums){
     return new int[1][1];
   }
+
+  public static void main(String[] args){
+    Int[][] test = new Int[][] {};
+    test = new Int[][] {{2, 2}, {5 , 7}, {1, 4}};
+    test = new Int[][] {{2, 4, 5, 6,2}};
+    test = new Int[][] {{2, 4}, {}, {5, 9}};
+
+
+  }
+
 }
