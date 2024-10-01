@@ -27,14 +27,14 @@ public class ArrayMethods {
   */
   public static String arrToString(int[][]nums){
   //this should use arrToString(int[])
-  String ret = new String("[");
+  String newArr = new String("[");
   for (int i = 0; i < nums.length; i++) {
-    ret += arrToString(nums[i]);
-    if (i < nums.length - 1) {
-      ret += ", ";
+    newArr += arrToString(nums[i]);
+    if (i != nums.length - 1) {
+      newArr += ", ";
     }
   }
-  return ret + "]";
+  return newArr + "]";
 }
 
 /*Return the sum of all of the values in the 2D array */
@@ -54,7 +54,15 @@ public class ArrayMethods {
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
   */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] ret = new int[nums[0].length][nums.length];
+
+    for (int i = 0; i < nums[0].length; i++) {
+      for (int j = 0; j < nums.length; j++) {
+        ret[i][j] = nums[j][i];
+      }
+    }
+
+    return ret;
   }
 
   public static void main(String[] args){
@@ -87,6 +95,19 @@ public class ArrayMethods {
     System.out.println("Expected: " + (2+4+5+9));
     System.out.println(arr2DSum(test));
 
+    System.out.println("Tests for swapRC");
+
+    test = new int[][]{{1,2,3},{4,5,6}};
+    System.out.println("Expected: {{1,4},{2,5},{3,6}}");
+    System.out.println(arrToString(swapRC(test)));
+
+    test = new int[][]{{7,2,6, 12},{4,18,6, 64}};
+    System.out.println("Expected: {{7,4},{2,18},{6,6}, {12,64}}");
+    System.out.println(arrToString(swapRC(test)));
+
+    test = new int[][]{{1,2,3,4},{5,6,7,8},{9,10,11,12},{13,14,15,16}};
+    System.out.println("Expected: {{1,5,9,13},{2,6,10,14},{3,7,11,15},{4,8,12,16}}");
+    System.out.println(arrToString(swapRC(test)));
   }
 
 }
