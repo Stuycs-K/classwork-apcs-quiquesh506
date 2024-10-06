@@ -33,7 +33,7 @@ public class ArrayMethods {
   String ret = new String("[");
   for (int i = 0; i < nums.length; i++) {
     ret += arrToString(nums[i]);
-    if (i < nums.length - 1) {
+    if (i != nums.length - 1) {
       ret += ", ";
     }
   }
@@ -105,15 +105,13 @@ public static int[][] copy(int[][] nums){
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
-    replaceNegative(test);
-    System.out.println("After replaceNegative: " + arrToString(test));
+    
 
     test = new int[][] {{2, 4, 5, 6,2}};
     System.out.println(arrToString(test));
     System.out.println("Sum: " + arr2DSum(test));
     System.out.println("After rotation: " + arrToString(swapRC(test)));
-    replaceNegative(test);
-    System.out.println("After replaceNegative: " + arrToString(test));
+    
 
     test = new int[][] {{2, 4}, {}, {5, 9}};
     System.out.println(arrToString(test));
@@ -128,6 +126,15 @@ public static int[][] copy(int[][] nums){
     replaceNegative(test);
     System.out.println("After replaceNegative: " + arrToString(test));
 
+    test = new int[][] {{-1,2,3},{4,-5,-6}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
+    test = new int[][] {{-1,2,3},{4,-5,-6},{7,8,-9,10,-11}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
   }
 
 }
