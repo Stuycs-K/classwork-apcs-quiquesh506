@@ -6,6 +6,19 @@ public class ArrayDemo{
     //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
     //do not use any other Arrays.method()
 
+    // Test cases for countZeroes2D
+    System.out.println("tests for countZeroes2D");
+    int[][] test = new int[][]{{1,2,0,5,0},{0, 0, 0, 45}, {2,3,0}}; //6
+    System.out.println(countZeros2D(test));
+
+    System.out.println("tests for countZeroes2D");
+    int[][] test = new int[][]{{},{0, 0, 0, 45}, {2,3,0}}; //4
+    System.out.println(countZeros2D(test));
+
+    System.out.println("tests for countZeroes2D");
+    int[][] test = new int[][]{}; // 0
+    System.out.println(countZeros2D(test));
+
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
