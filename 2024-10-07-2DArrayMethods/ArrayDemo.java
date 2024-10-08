@@ -23,8 +23,8 @@ public class ArrayDemo{
     test = new int[][]{{1,2,3,4},{5,6},{7}}; 
     System.out.println(htmlTable(test));
 
-    //<table><tr></tr><tr><td>5</td><td>6</td></tr><tr><td>7</td></tr></table>
-    test = new int[][]{{},{5,6},{7}}; 
+    //<table><tr></tr><tr><td>5</td><td>6</td></tr></table>
+    test = new int[][]{{},{5,6}}; 
     System.out.println(htmlTable(test));
   }
 
