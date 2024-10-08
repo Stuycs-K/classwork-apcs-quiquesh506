@@ -7,18 +7,25 @@ public class ArrayDemo{
     //do not use any other Arrays.method()
 
     // Test cases for countZeroes2D
-    System.out.println("tests for countZeroes2D");
+    System.out.println("tests for countZeroes2D:");
     int[][] test = new int[][]{{1,2,0,5,0},{0, 0, 0, 45}, {2,3,0}}; //6
     System.out.println(countZeros2D(test));
 
-    System.out.println("tests for countZeroes2D");
     test = new int[][]{{},{0, 0, 0, 45}, {2,3,0}}; //4
     System.out.println(countZeros2D(test));
 
-    System.out.println("tests for countZeroes2D");
     test = new int[][]{}; // 0
     System.out.println(countZeros2D(test));
 
+    System.out.println("Tests for html table:");
+
+    //<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td></tr><tr><td>7</td></tr></table>
+    test = new int[][]{{1,2,3,4},{5,6},{7}}; 
+    System.out.println(htmlTable(test));
+
+    //<table><tr></tr><tr><td>5</td><td>6</td></tr><tr><td>7</td></tr></table>
+    test = new int[][]{{},{5,6},{7}}; 
+    System.out.println(htmlTable(test));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
