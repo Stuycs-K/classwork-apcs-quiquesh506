@@ -12,11 +12,11 @@ public class ArrayDemo{
     System.out.println(countZeros2D(test));
 
     System.out.println("tests for countZeroes2D");
-    int[][] test = new int[][]{{},{0, 0, 0, 45}, {2,3,0}}; //4
+    test = new int[][]{{},{0, 0, 0, 45}, {2,3,0}}; //4
     System.out.println(countZeros2D(test));
 
     System.out.println("tests for countZeroes2D");
-    int[][] test = new int[][]{}; // 0
+    test = new int[][]{}; // 0
     System.out.println(countZeros2D(test));
 
   }
@@ -50,7 +50,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int sum = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+        if (nums[i][j] == 0) {
+          sum += 1;
+        }
+      }
+    }
+    return sum;
   }
 
   //2. Calculate the sum of a 2d array
