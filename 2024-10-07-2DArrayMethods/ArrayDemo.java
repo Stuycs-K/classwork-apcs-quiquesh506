@@ -21,10 +21,12 @@ public class ArrayDemo{
 
     //<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td></tr><tr><td>7</td></tr></table>
     test = new int[][]{{1,2,3,4},{5,6},{7}}; 
+    System.out.println("expected\n<table><tr><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><td>5</td><td>6</td></tr><tr><td>7</td></tr></table>");
     System.out.println(htmlTable(test));
 
     //<table><tr></tr><tr><td>5</td><td>6</td></tr></table>
-    test = new int[][]{{},{5,6}}; 
+    test = new int[][]{{},{5,6}};
+    System.out.println("expected\n<table><tr></tr><tr><td>5</td><td>6</td></tr></table>");
     System.out.println(htmlTable(test));
   }
 
