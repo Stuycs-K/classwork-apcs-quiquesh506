@@ -144,6 +144,13 @@ public static int[][] copy(int[][] nums){
     String ret = "<table>";
     for (int i = 0; i < nums.length; i++) {
       ret += "<tr>";
+
+      for (int j = 0; j < nums[i].length; j++) {
+        ret += "<td>";
+        ret += nums[i][j];
+        ret += "</td>";
+      }
+
       ret += "</tr>";
     }
     return ret + "</table>";
