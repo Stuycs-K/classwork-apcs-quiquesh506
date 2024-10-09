@@ -28,6 +28,57 @@ public class ArrayDemo{
     test = new int[][]{{},{5,6}};
     System.out.println("expected\n<table><tr></tr><tr><td>5</td><td>6</td></tr></table>");
     System.out.println(htmlTable(test));
+
+    System.out.println("testing arr2DSum:");
+
+    test = new int[][] {{}};
+    System.out.println(arrToString(test));
+    System.out.println("Sum: " + arr2DSum(test));
+
+    test = new int[][] {{2, 2}, {5 , 7}, {1, 4}};
+    System.out.println(arrToString(test));
+    System.out.println("Sum: " + arr2DSum(test));
+    
+
+    test = new int[][] {{2, 4, 5, 6,2}};
+    System.out.println(arrToString(test));
+    System.out.println("Sum: " + arr2DSum(test));
+    
+
+    test = new int[][] {{2, 4}, {}, {5, 9}};
+    System.out.println(arrToString(test));
+    System.out.println("Sum: " + arr2DSum(test));
+
+    test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
+    System.out.println(arrToString(test));
+    System.out.println("Sum: " + arr2DSum(test));
+
+    System.out.println("testing replaceNegative:");
+
+    test = new int[][] {{}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
+    test = new int[][] {{2, 4}, {}, {5, 9}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
+    test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
+    test = new int[][] {{-1,2,3},{4,-5,-6}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
+
+    test = new int[][] {{-1,2,3},{4,-5,-6},{7,8,-9,10,-11}};
+    System.out.println(arrToString(test));
+    replaceNegative(test);
+    System.out.println("After replaceNegative: " + arrToString(test));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
