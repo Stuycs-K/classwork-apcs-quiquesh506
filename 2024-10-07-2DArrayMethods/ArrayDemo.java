@@ -99,6 +99,21 @@ public class ArrayDemo{
     test = new int[][]{{12}, {313,2}};
     System.out.println(arrToString(test));
     System.out.println(arrToString(test2));
+
+    System.out.println("Testing swapRC:");
+
+    test = new int[][] {{2, 2}, {5 , 7}, {1, 4}};
+    System.out.println(arrToString(test));
+    System.out.println("After rotation: " + arrToString(swapRC(test)));
+    
+
+    test = new int[][] {{2, 4, 5, 6,2}};
+    System.out.println(arrToString(test));
+    System.out.println("After rotation: " + arrToString(swapRC(test)));
+    
+    test = new int[][] {{1,2,3},{4,5,6}}; //{{1,4},{2,5},{3,6}}
+    System.out.println(arrToString(test));
+    System.out.println("After rotation: " + arrToString(swapRC(test)));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
