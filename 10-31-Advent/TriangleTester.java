@@ -13,7 +13,7 @@ public class TriangleTester {
   public static int countTrianglesA(String filename) {
     //int[][] lengths = new int[][]();
     ArrayList<ArrayList<Integer>> lengths = new ArrayList<ArrayList<Integer>>();
-
+    int sum = 0;
     try {
       File file = new File(filename);//1
       Scanner scan = new Scanner(file);
@@ -42,9 +42,21 @@ public class TriangleTester {
     }
 
     for (int i = 0; i < lengths.size(); i++) {
-      System.out.println(lengths.get(i));
+      int a = lengths.get(i).get(0);
+      int b = lengths.get(i).get(1);
+      int c = lengths.get(i).get(2);
+      if (a > b+c) {
+        sum--;
+      } else if (b < a+c) {
+        sum--;
+      } else if (c < a+b) {
+        sum--;
+      }
+      sum++;
     }
-    return 0;
+
+
+    return sum;
 
   }
 
