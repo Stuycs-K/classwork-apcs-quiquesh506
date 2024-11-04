@@ -1,29 +1,37 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
 public class TriangleTester {
 
-  public static void main(Strings[] args) {
-
+  public static void main(String[] args) {
+    countTrianglesA("inputTri.txt");
+    return;
   }
 
   public static int countTrianglesA(String filename) {
-    int[][] lengths = new int[][]();
+    //int[][] lengths = new int[][]();
+    ArrayList<ArrayList<Integer>> lengths = new ArrayList<ArrayList<Integer>>();
 
     try {
-      File file = new File("triangleSides");//1
+      File file = new File(filename);//1
       Scanner scan = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       int count=0;
-      while (scan.hasNextLine()) {
+      while (scan.hasNextInt()) {
+        //System.out.println(scan.hasNextLine());
+        lengths.add(new ArrayList<Integer>());
         for (int i = 0; i < 3; i++) {
-          lengths[count] += scan.nextInt();
+          if (scan.hasNextInt()) {
+            lengths.get(count).add(scan.nextInt());
+          } //else {
+            //scan.nextLine();
+          //}
+          //System.out.print(lengths.get(count).get(i) + " ");
         }
+        //System.out.println("");
         count++;
-      }
-      for (int i = 0; i < lengths.length; i++) {
-        if (lengths[i][])
       }
       scan.close();//releases the file from your program
 
@@ -33,6 +41,10 @@ public class TriangleTester {
       return -1; //you can return from a void function just don't put a value.
     }
 
+    for (int i = 0; i < lengths.size(); i++) {
+      System.out.println(lengths.get(i));
+    }
+    return 0;
 
   }
 
