@@ -16,6 +16,7 @@ public class TriangleTester {
     try {
       File file = new File(filename);//1
       Scanner scan = new Scanner(file);
+      
       //CODE THAT SCANS THE FILE.
       int count=0;
       while (scan.hasNextInt()) {
@@ -40,7 +41,7 @@ public class TriangleTester {
       return -1; //you can return from a void function just don't put a value.
     }
 
-    
+
     return -10000;
   }
   
