@@ -6,9 +6,11 @@ import java.util.ArrayList;
 public class TriangleTester {
 
   public static void main(String[] args) {
-    countTrianglesA("inputTri.txt");
+    System.out.println(countTrianglesA("inputTri.txt"));
     return;
   }
+
+  
 
   public static int countTrianglesA(String filename) {
     //int[][] lengths = new int[][]();
@@ -45,11 +47,11 @@ public class TriangleTester {
       int a = lengths.get(i).get(0);
       int b = lengths.get(i).get(1);
       int c = lengths.get(i).get(2);
-      if (a > b+c) {
+      if (a >= b+c) {
         sum--;
-      } else if (b < a+c) {
+      } else if (b >= a+c) {
         sum--;
-      } else if (c < a+b) {
+      } else if (c >= a+b) {
         sum--;
       }
       sum++;
