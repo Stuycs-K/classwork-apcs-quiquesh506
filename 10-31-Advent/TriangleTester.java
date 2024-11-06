@@ -10,6 +10,39 @@ public class TriangleTester {
     return;
   }
 
+  public static int countTrianglesB(String filename) {
+    ArrayList<ArrayList<Integer>> lengths = new ArrayList<ArrayList<Integer>>();
+    int sum = 0;
+    try {
+      File file = new File(filename);//1
+      Scanner scan = new Scanner(file);
+      //CODE THAT SCANS THE FILE.
+      int count=0;
+      while (scan.hasNextInt()) {
+        //System.out.println(scan.hasNextLine());
+        lengths.add(new ArrayList<Integer>());
+        for (int i = 0; i < 3; i++) {
+          if (scan.hasNextInt()) {
+            lengths.get(count).add(scan.nextInt());
+          } //else {
+            //scan.nextLine();
+          //}
+          //System.out.print(lengths.get(count).get(i) + " ");
+        }
+        //System.out.println("");
+        count++;
+      }
+      scan.close();//releases the file from your program
+
+    } catch (FileNotFoundException ex) {
+      //File not found what should you do?
+      System.out.println("File not found");
+      return -1; //you can return from a void function just don't put a value.
+    }
+
+    
+    return -10000;
+  }
   
 
   public static int countTrianglesA(String filename) {
