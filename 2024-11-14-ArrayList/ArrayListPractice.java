@@ -1,3 +1,5 @@
+//andyl239@nycstudents.net ali60@stuy.edu
+//sophiay30@nycstudents.net syoung60@stuy.edu
 import java.util.ArrayList;
 
 public class ArrayListPractice {
@@ -16,12 +18,12 @@ public class ArrayListPractice {
   public static void replaceEmpty( ArrayList<String> original){
   //Modify the ArrayList such that it has all of the empty strings are
   //replaced with the word "Empty".
-  for (int count; count < original.size(); count++){
-    if original.get(count).equals(""){
+  for (int count = 0; count < original.size(); count++){
+    if (original.get(count).equals("")){
       original.set(count, "Empty");
     }
   }
-} 
+}
 
   public static void main(String args[]) {
 
@@ -32,5 +34,15 @@ public class ArrayListPractice {
       System.out.println("" + testCase + "\n");
     }
     System.out.println(createRandomArray(30));
+    ArrayList<String> longTest = createRandomArray(200000);
+    System.out.println(longTest);
+    replaceEmpty(longTest);
+    System.out.println(longTest);
+
   }
+
+  public static ArrayList<String> makeReversedList( ArrayList<String> original){
+    ArrayList<String> ans = createRandomArray(original.size())
+  //return a new ArrayList that is in the reversed order of the original.
+}
 }
