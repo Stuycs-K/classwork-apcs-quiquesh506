@@ -13,7 +13,24 @@ public class ArrayListPractice {
     }
     return list;
   }
+  public static void replaceEmpty( ArrayList<String> original){
+  //Modify the ArrayList such that it has all of the empty strings are
+  //replaced with the word "Empty".
+  for (int count; count < original.size(); count++){
+    if original.get(count).equals(""){
+      original.set(count, "Empty");
+    }
+  }
+} 
+
   public static void main(String args[]) {
+
+    for (int count = 0; count < 20; count++){
+      ArrayList<String> testCase = createRandomArray(10);
+      System.out.println(testCase);
+      replaceEmpty(testCase);
+      System.out.println("" + testCase + "\n");
+    }
     System.out.println(createRandomArray(30));
   }
 }
