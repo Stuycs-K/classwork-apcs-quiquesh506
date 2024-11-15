@@ -16,14 +16,14 @@ public class ArrayListPractice {
     return list;
   }
   public static void replaceEmpty( ArrayList<String> original){
-  //Modify the ArrayList such that it has all of the empty strings are
-  //replaced with the word "Empty".
-  for (int count = 0; count < original.size(); count++){
-    if (original.get(count).equals("")){
-      original.set(count, "Empty");
+    //Modify the ArrayList such that it has all of the empty strings are
+    //replaced with the word "Empty".
+    for (int count = 0; count < original.size(); count++){
+      if (original.get(count).equals("")){
+        original.set(count, "Empty");
+      }
     }
   }
-}
 
   public static void main(String args[]) {
 
@@ -48,5 +48,15 @@ public class ArrayListPractice {
     }
     return ans;
   //return a new ArrayList that is in the reversed order of the original.
-}
+  }
+  public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+    //return a new ArrayList that has all values of a and b in alternating order that is:
+    //a[0], b[0], a[1], b[1]...
+    //If one list is longer than the other, just attach the remaining values to the end.
+    ArrayList<String> ret = new ArrayList<String>(a.size() + b.size());
+    int N = a.size();
+    if (b.size() > a.size()) {
+      N = b.size();
+    }
+  } 
 }
