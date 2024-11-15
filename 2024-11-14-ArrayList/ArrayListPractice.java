@@ -58,5 +58,14 @@ public class ArrayListPractice {
     if (b.size() > a.size()) {
       N = b.size();
     }
+    for (int i = 0; i < N; i++) {
+      if (i < a.size()) {
+        ret.add(a.get(i));
+      }
+      if (i < b.size()) {
+        ret.add(b.get(i));
+      }
+    }
+    return ret;
   } 
 }
