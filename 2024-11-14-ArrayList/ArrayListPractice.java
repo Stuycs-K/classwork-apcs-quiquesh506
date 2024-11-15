@@ -42,7 +42,11 @@ public class ArrayListPractice {
   }
 
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
-    ArrayList<String> ans = createRandomArray(original.size())
+    ArrayList<String> ans = new ArrayList<String>(original.size());
+    for (int i = 0; i < original.size(); i++) {
+      ans.set(i, original.get(original.size() - i - 1));
+    }
+    return ans;
   //return a new ArrayList that is in the reversed order of the original.
 }
 }
