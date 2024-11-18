@@ -58,7 +58,16 @@ public class ArrayListPractice {
       
       System.out.println("" + mixLists(testCase1, testCase2) + "\n");
     }
+    System.out.println("testing mixLists again");
+    for (int count = 0; count < 20; count++){
+      ArrayList<String> testCase1 = createRandomArray(10);
+      System.out.println(testCase1);
 
+      ArrayList<String> testCase2 = createRandomArray(15);
+      System.out.println(testCase2);
+      
+      System.out.println("" + mixLists(testCase1, testCase2) + "\n");
+    }
 
   }
 
