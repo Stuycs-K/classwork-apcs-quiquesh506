@@ -39,12 +39,21 @@ public class ArrayListPractice {
     replaceEmpty(longTest);
     System.out.println(longTest);
 
+    System.out.println("testing makeReversedList");
+    for (int count = 0; count < 20; count++){
+      ArrayList<String> testCase = createRandomArray(10);
+      System.out.println(testCase);
+      
+      System.out.println("" + makeReversedList(testCase) + "\n");
+    }
+
+
   }
 
   public static ArrayList<String> makeReversedList( ArrayList<String> original){
     ArrayList<String> ans = new ArrayList<String>(original.size());
     for (int i = 0; i < original.size(); i++) {
-      ans.set(i, original.get(original.size() - i - 1));
+      ans.add(i, original.get(original.size() - i - 1));
     }
     return ans;
   //return a new ArrayList that is in the reversed order of the original.
