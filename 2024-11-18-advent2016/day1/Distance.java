@@ -28,7 +28,23 @@ public class Distance {
     }
     return ret;
   }
+  public static int solve(int[][] tokens) {
+    int[] coords = new int[]{0,0};
+    int facing = 0;
+    int[][] offset = {
+      {0,1}, {-1,0}, {0,-1}, {1,0}
+    };
+
+    for (int[] i : tokens) {
+      facing = ((facing + 4 + i[0]) % 4) % 4;
+      coords[0] += offset[facing][0] * i[1];
+      coords[1] += offset[facing][1] * i[1];
+    }
+    return Math.abs(coords[0]) + Math.abs(coords[1]);
+  }
   public static void main(String args[]) {
-    System.out.println(Arrays.deepToString(lexInput("input.txt")));
+    int[][] toks = lexInput("input.txt");
+    //System.out.println(Arrays.deepToString(lexInput("input.txt")));
+    System.out.println(solve(toks));
   }
 }
