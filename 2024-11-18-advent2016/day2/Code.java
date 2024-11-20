@@ -27,18 +27,22 @@ public class Code {
     System.out.println(Arrays.toString(text));
     int[][] grid = {{1,2,3},{4,5,6},{7,8,9}};
     int[][] moves = {
-      {0,1}, {-1,0}, {0,-1}, {1,0}
+      {0,-1}, {-1,0}, {0,1}, {1,0}
     };
 
     int x = 1;
     int y = 1;
 
+    String pw = new String("");
+
     for (String path : text) {
       for (int i = 0; i < path.length(); i++) {
         int[] cmove = moves[Integer.parseInt(path.substring(i, i+1))];
-        x = clamp(x + cmove[0], 0, 3);
-        y = clamp()
+        x = clamp(x + cmove[0], 0, 2);
+        y = clamp(y + cmove[1], 0, 2);
       }
+      pw = pw + grid[y][x];
     }
+    System.out.println(pw);
   }
 }
