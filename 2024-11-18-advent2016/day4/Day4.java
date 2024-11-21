@@ -2,8 +2,23 @@ import java.util.*;
 import java.io.*;
 
 public class Day4 {
-  public static String[] getChecksum(String name) {
-    return new String[]{""};
+  public static String getChecksum(String name) {
+    ArrayList<String> letters = new ArrayList<String>();
+    ArrayList<Integer> counts = new ArrayList<Integer>();
+
+    for (int i = 0; i < name.length(); i++) {
+      int index = letters.indexOf(name.substring(i,i+1));
+      
+      if (index == -1) {
+        letters.add(name.substring(i, i+1));
+        counts.add(1);
+      } else {
+        counts.set(index, counts.get(index) + 1);
+      }
+    }
+    
+    
+    return new String("");
   }
   public static ArrayList<String[]> parse(String filename) {
     ArrayList<String[]> ret = new ArrayList<String[]>();
