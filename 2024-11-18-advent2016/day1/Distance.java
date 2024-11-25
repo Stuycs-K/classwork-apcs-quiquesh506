@@ -2,6 +2,7 @@ import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Arrays;
+import java.util.ArrayList;
 
 public class Distance {
   public static int[][] lexInput(String filename) {
@@ -12,6 +13,7 @@ public class Distance {
       while (inscan.hasNextLine()) {
         text = text + inscan.nextLine();
       }
+      inscan.close();
     } catch (FileNotFoundException e) {
       System.out.println("file not found");
       return new int [][] {{-2, -2}};
@@ -42,6 +44,33 @@ public class Distance {
     }
     return Math.abs(coords[0]) + Math.abs(coords[1]);
   }
+
+  public static int solve2(int[][] tokens) {
+    int[] coords = new int[]{0,0};
+    int facing = 0;
+    int[][] offset = {
+      {0,1}, {-1,0}, {0,-1}, {1,0}
+    };
+
+    ArrayList<Integer[]> coordList = new ArrayList<Integer[]>();
+
+
+    for (int[] i : tokens) {
+      facing = ((facing + 4 + i[0]) % 4) % 4;
+      coords[0] += offset[facing][0] * i[1];
+      coords[1] += offset[facing][1] * i[1];
+
+      for(int j = 0; j < coordList.size(); j++) {
+        if (coords[0] == coordList.get(j)[0] && coords[1] == coordList.get(j)[1]) {
+          return Math.abs(coords[0]) + Math.abs(coords[1]);
+        }
+      }
+
+      coordList.add(new Integer[]{coords[0], coords[1]});
+    }
+    return -1;
+  }
+
   public static void main(String args[]) {
     int[][] toks = lexInput("input.txt");
     //System.out.println(Arrays.deepToString(lexInput("input.txt")));
