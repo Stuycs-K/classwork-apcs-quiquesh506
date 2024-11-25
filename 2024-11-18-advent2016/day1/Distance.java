@@ -53,20 +53,25 @@ public class Distance {
     };
 
     ArrayList<Integer[]> coordList = new ArrayList<Integer[]>();
-
+    coordList.add(new Integer[]{0, 0});
 
     for (int[] i : tokens) {
       facing = ((facing + 4 + i[0]) % 4) % 4;
-      coords[0] += offset[facing][0] * i[1];
-      coords[1] += offset[facing][1] * i[1];
 
-      for(int j = 0; j < coordList.size(); j++) {
-        if (coords[0] == coordList.get(j)[0] && coords[1] == coordList.get(j)[1]) {
-          return Math.abs(coords[0]) + Math.abs(coords[1]);
+      for (int j = 0; j < i[1]; j++) {
+        coords[0] += offset[facing][0];
+        coords[1] += offset[facing][1];
+
+        for(int k = 0; k < coordList.size(); k++) {
+          if (coords[0] == coordList.get(k)[0] && coords[1] == coordList.get(k)[1]) {
+            return Math.abs(coords[0]) + Math.abs(coords[1]);
+          }
         }
+
+        coordList.add(new Integer[]{coords[0], coords[1]});
       }
 
-      coordList.add(new Integer[]{coords[0], coords[1]});
+      
     }
     return -1;
   }
@@ -74,6 +79,7 @@ public class Distance {
   public static void main(String args[]) {
     int[][] toks = lexInput("input.txt");
     //System.out.println(Arrays.deepToString(lexInput("input.txt")));
-    System.out.println(solve(toks));
+    //System.out.println(solve(toks));
+    System.out.println(solve2(toks));
   }
 }
