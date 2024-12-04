@@ -21,7 +21,13 @@ public class ColorDemo {
     public static final String VIOLET_T = "\u001b[38;2;143;0;255m";
 
     public static void main (String[] args) {
-        System.out.print("A ");
+        // System.out.print("\u001b[31m");
+        // System.out.println("silly monkeys");
+        System.out.print("A " + RED_T + "r" + ORANGE_T + "a" + YELLOW_T + "i" + GREEN_T + "n" + BLUE_T + "b" + INDIGO_T + "o" + VIOLET_T + "w" + DEFAULT +
+         "is formed by the " + YELLOW_B + "sunlight" + DEFAULT + "\nShining through raindrops so small.\n");
+        System.out.print("The rain bends the light from the sunshine,\nAnd colors the " + BLUE_T + "sky" + DEFAULT + "for us all.\n");
+        System.out.print(RED_B + "Red, " + ORANGE_B + "orange, " + YELLOW_B + "yellow, " + GREEN_B + "green, " + BLUE_B + "blue, " + INDIGO_B + "indigo, " + VIOLET_B + "violet" + DEFAULT);
+        System.out.print(" is what we see.\nRainbow colors,\nAre made with light bending you see!\n");
 
     }
 }
