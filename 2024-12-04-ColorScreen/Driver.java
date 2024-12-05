@@ -53,7 +53,11 @@ public class Driver {
             System.out.print(list.get(j));
             j++;
         }
-        
+        Text.go(3,2);
+        for (int i = 0; i < 78; i++) {
+            Text.color(Text.WHITE, Text.background(Text.RED));
+            System.out.print(".");
+        }
     }
 
     public static ArrayList<Integer>createRandomArray(int size) {
