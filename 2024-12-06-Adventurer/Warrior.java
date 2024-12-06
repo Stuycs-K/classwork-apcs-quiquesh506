@@ -25,6 +25,13 @@ public class Warrior extends Adventurer {
       }
       return "healed " + other.getName() + " for 2 health";
     }
+    public String support() {
+      applyDamage(-2);
+      if (getHP() > getmaxHP()) {
+        setHP(getmaxHP());
+      }
+      return "healed themself for 2 health";
+    }
 
 
 }
