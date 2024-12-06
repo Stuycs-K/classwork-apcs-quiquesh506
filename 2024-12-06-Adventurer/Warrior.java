@@ -16,7 +16,14 @@ public class Warrior extends Adventurer {
 
     public String attack(Adventurer other) {
       other.applyDamage(5);
-      return "hit " + other.getName() + "for 5 damage";
+      return "hit " + other.getName() + " for 5 damage";
+    }
+    public String support(Adventurer other) {
+      other.setHP(other.getHP() + 2);
+      if (other.getHP() > other.getmaxHP()) {
+        other.setHP(other.getmaxHP());
+      }
+      return "healed " + other.getName() + " for 2 health";
     }
 
 
