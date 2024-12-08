@@ -46,5 +46,12 @@ public class Warrior extends Adventurer {
       return "healed themself for 2 health";
     }
 
+    public String specialAttack(Adventurer other) {
+        if (focus < 15) {
+            return "could not use special, not enough focus";
+        }
+        other.applyDamage(9);
+        return "used Mighty Strike to deal 9 damage to " + other.getName();
+    }
 
 }
