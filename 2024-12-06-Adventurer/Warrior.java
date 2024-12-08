@@ -1,6 +1,19 @@
 public class Warrior extends Adventurer {
     private int focus;
 
+    public Warrior(String name) {
+        super(name);
+        focus = 10;
+    }
+    public Warrior(String name, int hp) {
+        super(name, hp);
+        focus = 10;
+    }
+    public Warrior(String name, int hp, int focus) {
+        super(name, hp);
+        this.focus = focus;
+    }
+
     public String getSpecialName() {
         return "focus";
     }
