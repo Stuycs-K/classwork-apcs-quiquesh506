@@ -14,7 +14,14 @@ public class Game {
       System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
 
       String choice = input.nextLine();
-      
+
+      if (choice.equals("a")) {
+        player.attack(bot);
+      }else if (choice.equals("sp")) {
+        player.specialAttack(bot);
+      }else if (choice.equals("su")) {
+        player.support();
+      }
     }
   }
 }
