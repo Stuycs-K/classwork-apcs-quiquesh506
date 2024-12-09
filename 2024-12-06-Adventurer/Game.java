@@ -6,7 +6,15 @@ public class Game {
     Warrior player = new Warrior("player", 20, 15);
 
     while (bot.getHP() > 0 && player.getHP() > 0) {
-      System.out.println("Henry")
+      System.out.println("" + player + ", " + player.getHP() + "/" + player.getmaxHP() + " HP, " + player.getSpecial() + "/" + player.getSpecialMax());
+      System.out.println("" + bot + ", " + bot.getHP() + "/" + bot.getmaxHP() + " HP, " + bot.getSpecial() + "/" + bot.getSpecialMax());
+
+      Scanner input = new Scanner(System.in);
+
+      System.out.println("Type: (a)ttack / (sp)ecial / (su)pport / quit");
+
+      String choice = input.nextLine();
+      
     }
   }
 }
