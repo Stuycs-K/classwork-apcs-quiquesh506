@@ -5,5 +5,13 @@ public class Driver {
         System.out.println(t2.getHP());
         System.out.println(t1.attack(t2));
         System.out.println(t2.getHP());
+
+        System.out.println(t1.support(t2));
+        System.out.println(t2.getHP());
+
+        System.out.println(t1.specialAttack(t2));
+        t1.restoreSpecial(20);
+        System.out.println(t1.specialAttack(t2));
+        System.out.println(t2.getHP());
     }
 }
