@@ -35,8 +35,21 @@ public class Game {
         }
       }
 
+      int botChoice = (int)(Math.random() * 3);
+      if (botChoice == 0) {
+        bot.attack(player);
+      } else if (botChoice == 1) {
+        bot.specialAttack(player);
+      } else {
+        bot.support();
+      }
 
       input.close();
+    }
+    if (bot.getHP() > 0) {
+      System.out.println("Winner: " + bot);
+    } else {
+      System.out.println("Winner: " + player);
     }
   }
 }
