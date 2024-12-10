@@ -15,13 +15,28 @@ public class Game {
 
       String choice = input.nextLine();
 
-      if (choice.equals("a")) {
-        player.attack(bot);
-      }else if (choice.equals("sp")) {
-        player.specialAttack(bot);
-      }else if (choice.equals("su")) {
-        player.support();
+      boolean valid = false;
+
+      while (!valid) {
+        if (choice.equals("a")) {
+          player.attack(bot);
+          valid = true;
+        }else if (choice.equals("sp")) {
+          player.specialAttack(bot);
+          valid = true;
+        }else if (choice.equals("su")) {
+          player.support();
+          valid = true;
+        } else if (choice.equals("quit")) {
+          input.close();
+          return;
+        } else {
+          System.out.println("please input one of the following options:\nType: (a)ttack / (sp)ecial / (su)pport / quit");
+        }
       }
+
+
+      input.close();
     }
   }
 }
