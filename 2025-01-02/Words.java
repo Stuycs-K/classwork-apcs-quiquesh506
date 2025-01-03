@@ -6,10 +6,14 @@ public class Words {
       }
       return;
     }
-    for (int i = 0; i < alphabet.length; i++) {
+    for (int i = 0; i < alphabet.length(); i++) {
       makeWords(remainingLetters - 1, result + alphabet.charAt(i), alphabet);
     }
     return;
+  }
+
+  public static void main(String args[]) {
+    makeWords(3, "", "abc");
   }
 
 }
