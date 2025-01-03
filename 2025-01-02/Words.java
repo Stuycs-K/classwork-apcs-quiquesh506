@@ -10,6 +10,10 @@ public class Words {
     return;
   }
 
+  public static String toWords(int n) {
+    String[] num0to19
+  }
+
   public static void main(String args[]) {
     makeWords(3, "", "abc");
   }
