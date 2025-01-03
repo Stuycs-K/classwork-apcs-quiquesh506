@@ -1,9 +1,7 @@
 public class Words {
   public static void makeWords (int remainingLetters, String result, String alphabet) {
-    if (remainingLetters == 1) {
-      for (int i = 0; i < alphabet.length(); i++) {
-        System.out.println(result + alphabet.charAt(i));
-      }
+    if (remainingLetters == 0) {
+      System.out.println(result);
       return;
     }
     for (int i = 0; i < alphabet.length(); i++) {
